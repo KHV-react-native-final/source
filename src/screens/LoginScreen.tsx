@@ -1,13 +1,7 @@
 import React from 'react';
-import {
-  ImageBackground,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-
+import {ImageBackground, StyleSheet, View} from 'react-native';
+import BaseBtn from '../components/core/BaseBtn';
+import BaseInput from '../components/core/BaseInput';
 export default () => {
   return (
     <View style={styles.container}>
@@ -17,7 +11,10 @@ export default () => {
         }}
         style={styles.img}>
         <View style={styles.loginForm}>
-          <View>
+          <BaseInput label="UserName:" placeholder="Enter your username" />
+          <BaseInput label="Password" placeholder="Enter your password" />
+
+          {/* <View>
             <Text style={styles.boxTittle}>User Name</Text>
             <TextInput style={styles.input} placeholder="Enter your email..." />
           </View>
@@ -28,27 +25,10 @@ export default () => {
               style={styles.input}
               placeholder="Enter your password..."
             />
-          </View>
-          <View style={styles.loginBtn}>
-            <TouchableOpacity
-              style={{
-                borderRadius: 10,
-                height: 40,
-                width: 100,
-                backgroundColor: '#FD841F',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <Text
-                style={{
-                  color: '#ffffff',
-                  fontSize: 18,
-                  fontWeight: '800',
-                  textAlign: 'center',
-                }}>
-                Login
-              </Text>
-            </TouchableOpacity>
+          </View> */}
+
+          <View style={styles.Btn}>
+            <BaseBtn tittle="Login" />
           </View>
         </View>
       </ImageBackground>
@@ -56,7 +36,7 @@ export default () => {
   );
 };
 const styles = StyleSheet.create({
-  container: {justifyContent: 'center', alignItems: 'center'},
+  container: {},
   img: {
     position: 'absolute',
     height: 845,
@@ -75,23 +55,7 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     marginRight: 5,
   },
-  input: {
-    height: 40,
-    margin: 12,
-    borderBottomWidth: 0.5,
-    borderBottomColor: '#FFEA11',
-    padding: 10,
-    color: '#FD841F',
-    width: 300,
-  },
-
-  boxTittle: {
-    fontSize: 20,
-    fontWeight: '700',
-    left: 20,
-    color: '#000',
-  },
-  loginBtn: {
+  Btn: {
     justifyContent: 'center',
     alignItems: 'center',
   },
