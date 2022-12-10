@@ -1,9 +1,10 @@
-import { Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { MainNavigation } from "./src/navigations";
 
 export default () => {
   return (
-    <View>
-      <Text>Hi, welcome to KHV teaam</Text>
-    </View>
+    <NavigationContainer>
+      <MainNavigation />
+    </NavigationContainer>
   )
 }
