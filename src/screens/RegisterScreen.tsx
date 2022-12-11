@@ -27,7 +27,7 @@ export default () => {
             placeholder="Enter your password..."
           />
           <View style={styles.btn}>
-            <BaseBtn tittle="Register" />
+            <BaseBtn title="Register" />
           </View>
         </View>
       </KeyboardAvoidingView>
