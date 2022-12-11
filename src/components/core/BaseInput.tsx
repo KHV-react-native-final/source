@@ -4,8 +4,8 @@ import {StyleSheet, Text, TextInput, TextInputProps, View} from 'react-native';
 export default (props: TextInputProps & {label: string}) => {
   return (
     <View>
-      <Text style={styles.label}>{props.label}</Text>
-      <TextInput {...props} style={[styles.input, props.style]} />
+      {/*<Text style={styles.label}>{props.label}</Text>*/}
+      {/*<TextInput {...props} style={[styles.input, props.style]} />*/}
     </View>
   );
 };

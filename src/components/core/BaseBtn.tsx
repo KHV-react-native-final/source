@@ -10,12 +10,13 @@ import {
 export default (props: TouchableOpacityProps & {title: string}) => {
   return (
     <View>
-      <TouchableOpacity {...props} style={[style.baseBtn, props.style]}>
-        <Text style={style.title}>{props.title}</Text>
-      </TouchableOpacity>
+      {/*<TouchableOpacity {...props} style={[style.baseBtn, props.style]}>*/}
+      {/*  <Text style={style.title}>{props.title}</Text>*/}
+      {/*</TouchableOpacity>*/}
     </View>
   );
 };
+
 const style = StyleSheet.create({
   baseBtn: {
     borderRadius: 10,

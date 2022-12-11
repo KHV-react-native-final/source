@@ -14,14 +14,16 @@ const uploadImg = async (fileDetails: DocumentPickerResponse) => {
   formData.append('image', imgBase64);
   formData.append('name', fileDetails.name);
 
+  const postConfig: any = {
+    headers: {
+      Authorization: `Client-ID ${CLIENT_ID}`,
+      // Authorization: `Bearer ${ACCESS_TOKEN}`,
+    }
+  }
+
   //axios
   return await axios
-    .post('https://api.imgur.com/3/image', formData, {
-      headers: {
-        Authorization: `Client-ID ${CLIENT_ID}`,
-        // Authorization: `Bearer ${ACCESS_TOKEN}`,
-      },
-    })
+    .post('https://api.imgur.com/3/image', formData, postConfig)
     .then(res => {
       // console.log('image data', res.data);
       console.log("Upload successfully!");
