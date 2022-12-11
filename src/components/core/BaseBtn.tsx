@@ -7,11 +7,11 @@ import {
   View,
 } from 'react-native';
 
-export default (props: TouchableOpacityProps & {tittle: string}) => {
+export default (props: TouchableOpacityProps & {title: string}) => {
   return (
     <View>
       <TouchableOpacity {...props} style={[style.baseBtn, props.style]}>
-        <Text style={style.tittle}>{props.tittle}</Text>
+        <Text style={style.title}>{props.title}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -25,7 +25,7 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  tittle: {
+  title: {
     color: '#ffffff',
     fontSize: 18,
     fontWeight: '800',
