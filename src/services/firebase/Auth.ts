@@ -1,4 +1,5 @@
 import auth from '@react-native-firebase/auth';
+import { Alert } from 'react-native';
 
 const loginWithEmailAndPassword = async (email: string, password: string, onError?: (error: any) => void) => {
   await auth()
@@ -27,6 +28,7 @@ const createUserWithEmailAndPassword = async (email: string, password: string, o
 
 const signOut = async () => {
   await auth().signOut();
+  Alert.alert('Logout sucessfully!');
 }
 
 export default {loginWithEmailAndPassword, createUserWithEmailAndPassword, signOut};

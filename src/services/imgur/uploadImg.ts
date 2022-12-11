@@ -24,6 +24,7 @@ const uploadImg = async (fileDetails: DocumentPickerResponse) => {
     })
     .then(res => {
       // console.log('image data', res.data);
+      console.log("Upload successfully!");
       return res.data;
     })
     .catch(error => console.log('error: ', error));
