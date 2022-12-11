@@ -1,18 +1,9 @@
 import firestore from '@react-native-firebase/firestore';
 import {Alert} from 'react-native';
+import {type IPost} from '../../types';
 
 const POST_COLLECTTION = 'posts';
-
-export interface IPost {
-  username: string;
-  date: string;
-  content: string;
-  img: {
-    deleteHash: string;
-    link: string;
-  };
-}
-
+const LOVELIST_COLLECTION = "lovelist"
 class Post {
   static getAll = async (handler: (postList: IPost[]) => void) => {
     const docs = (await firestore().collection<IPost>(POST_COLLECTTION).get())
@@ -32,8 +23,17 @@ class Post {
   };
 
   static deletePost = async (id: string) => {
-    return await firestore().collection(POST_COLLECTTION).doc(id).delete();
+    return await firestore()
+    .collection(POST_COLLECTTION)
+    .doc(id)
+    .delete();
   };
 }
 
+class LoveList {
+  static getAllByUID = async (uid: string) => {
+    return await firestore()
+    .collection(LOVELIST_COLLECTION)
+  }
+}
 export {Post};
